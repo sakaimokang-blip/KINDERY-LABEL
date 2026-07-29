@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KINDERY LABEL | Global Audition</title><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:linear-gradient(135deg,#8fd3ff,#b88cff,#ffd6f6);
+    background-size:400% 400%;
+    animation:bg 12s ease infinite;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:30px;
+}
+
+@keyframes bg{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+.card{
+    width:100%;
+    max-width:700px;
+    background:rgba(255,255,255,.18);
+    backdrop-filter:blur(25px);
+    border:1px solid rgba(255,255,255,.35);
+    border-radius:35px;
+    padding:35px;
+    box-shadow:0 15px 60px rgba(0,0,0,.18);
+}
+
+h1{
+    text-align:center;
+    color:white;
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    text-align:center;
+    color:white;
+    opacity:.9;
+    margin-bottom:35px;
+}
+
+label{
+    display:block;
+    color:white;
+    margin-top:18px;
+    margin-bottom:8px;
+    font-weight:600;
+}
+
+input,select,textarea{
+    width:100%;
+    border:none;
+    outline:none;
+    padding:16px;
+    border-radius:16px;
+    background:rgba(255,255,255,.28);
+    color:white;
+    font-size:16px;
+}
+
+input::placeholder,
+textarea::placeholder{
+    color:white;
+    opacity:.8;
+}
+
+textarea{
+    resize:none;
+    height:140px;
+}button{
+    width:100%;
+    margin-top:30px;
+    padding:18px;
+    border:none;
+    border-radius:18px;
+    font-size:18px;
+    font-weight:700;
+    cursor:pointer;
+    color:white;
+    background:linear-gradient(135deg,#7fd7ff,#b06cff,#ff8fd6);
+    transition:.3s;
+    box-shadow:0 10px 30px rgba(176,108,255,.35);
+}
+
+button:hover{
+    transform:translateY(-3px);
+    box-shadow:0 15px 35px rgba(176,108,255,.45);
+}
+
+.back{
+    display:block;
+    text-align:center;
+    margin-top:25px;
+    color:white;
+    text-decoration:none;
+    opacity:.9;
+}
+
+.back:hover{
+    opacity:1;
+}
+
+@media(max-width:600px){
+
+.card{
+    padding:25px;
+    border-radius:28px;
+}
+
+h1{
+    font-size:30px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>GLOBAL AUDITION</h1>
+
+<p class="subtitle">
+Become the next KINDERY LABEL artist.
+</p>
+
+<form><label>Full Name</label>
+<input type="text" placeholder="Your full name">
+
+<label>Age</label>
+<input type="number" placeholder="Your age">
+
+<label>Country</label>
+<input type="text" placeholder="Your country">
+
+<label>Email</label>
+<input type="email" placeholder="example@email.com">
+
+<label>Instagram / TikTok</label>
+<input type="text" placeholder="@username">
+
+<label>Position</label>
+
+<select>
+
+<option>Vocal</option>
+
+<option>Rap</option>
+
+<option>Dance</option>
+
+<option>Producer</option>
+
+<option>Songwriter</option>
+
+<option>Model</option>
+
+</select>
+
+<label>Tell us about yourself</label>
+
+<textarea placeholder="Tell us about yourself..."></textarea>
+
+<label>Upload your photo</label>
+
+<input type="file" accept="image/*">
+
+<label>Upload your audition video</label>
+
+<input type="file" accept="video/*">
+
+<button type="submit">
+Submit Application
+</button>
+
+</form>
+
+<a href="index.html" class="back">
+← Back to Home
+</a>
+
+</div><script>
+
+const form = document.querySelector("form");
+
+form.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    alert(
+`🎉 Thank you for applying to KINDERY LABEL!
+
+Your application has been received.
+
+We wish you the best of luck! 💜`
+    );
+
+    form.reset();
+
+});
+
+</script>
+
+</body>
+</html>
