@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>KINDERY LABEL</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+
+background:linear-gradient(135deg,#7ddcff,#b88cff,#ffd4ef);
+background-size:400% 400%;
+animation:bg 12s ease infinite;
+color:white;
+
+}
+
+@keyframes bg{
+
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+
+}
+
+nav{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:20px 60px;
+
+backdrop-filter:blur(15px);
+
+background:rgba(255,255,255,.15);
+
+position:fixed;
+width:100%;
+
+}
+
+nav h2{
+
+letter-spacing:3px;
+
+}
+
+nav ul{
+
+display:flex;
+list-style:none;
+gap:35px;
+
+}
+
+nav a{
+
+color:white;
+text-decoration:none;
+font-weight:bold;
+
+}
+
+.hero{
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+align-items:center;
+
+flex-direction:column;
+text-align:center;
+
+padding:30px;
+
+}
+
+.hero h1{
+
+font-size:70px;
+
+text-shadow:0 0 30px white;
+
+}
+
+.hero p{
+
+font-size:22px;
+
+margin-top:20px;
+
+max-width:700px;
+
+}
+
+button{
+
+margin-top:40px;
+
+padding:15px 40px;
+
+border:none;
+
+border-radius:50px;
+
+font-size:18px;
+
+background:white;
+
+color:#8b5cff;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+button:hover{
+
+transform:scale(1.08);
+
+}
+
+section{
+
+padding:120px 40px;
+
+}
+
+.cards{
+
+display:flex;
+
+gap:30px;
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+}
+
+.card{
+
+width:260px;
+
+padding:25px;
+
+background:rgba(255,255,255,.18);
+
+backdrop-filter:blur(20px);
+
+border-radius:25px;
+
+text-align:center;
+
+transition:.3s;
+
+}
+
+.card:hover{
+
+transform:translateY(-8px);
+
+}
+
+footer{
+
+padding:40px;
+
+text-align:center;
+
+background:rgba(255,255,255,.15);
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+
+<h2>KINDERY LABEL</h2>
+
+<ul>
+
+<li><a href="#">HOME</a></li>
+
+<li><a href="#">ARTISTS</a></li>
+
+<li><a href="#">NEWS</a></li>
+
+<li><a href="#">AUDITION</a></li>
+
+</ul>
+
+</nav>
+
+<div class="hero">
+
+<h1>KINDERY LABEL</h1>
+
+<p>
+Welcome to KINDERY LABEL —
+a new generation K-pop entertainment company.
+</p>
+
+<button>Explore</button>
+
+</div>
+
+<section>
+
+<h1 style="text-align:center;margin-bottom:60px;">
+OUR ARTISTS
+</h1>
+
+<div class="cards">
+
+<div class="card">
+
+<h2>COMING SOON</h2>
+
+<p>New Artist</p>
+
+</div>
+
+<div class="card">
+
+<h2>COMING SOON</h2>
+
+<p>New Group</p>
+
+</div>
+
+<div class="card">
+
+<h2>COMING SOON</h2>
+
+<p>Future Idol</p>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+© 2026 KINDERY LABEL
+
+</footer>
+
+</body>
+
+</html>
