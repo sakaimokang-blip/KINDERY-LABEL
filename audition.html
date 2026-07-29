@@ -157,7 +157,7 @@ Become the next KINDERY LABEL artist.
 <label>Email</label>
 <input type="email" placeholder="example@email.com">
 
-<label>Instagram / TikTok</label>
+<label>Instagram /Telegram user/ TikTok</label>
 <input type="text" placeholder="@username">
 
 <label>Position</label>
@@ -208,14 +208,25 @@ form.addEventListener("submit", function(e){
 
     e.preventDefault();
 
-    alert(
-`🎉 Thank you for applying to KINDERY LABEL!
+    form.addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  fetch(form.action, {
+    method: "POST",
+    body: new FormData(form),
+    headers: {
+      "Accept": "application/json"
+    }
+  }).then(() => {
+    //`🎉 Thank you for applying to KINDERY LABEL!
 
 Your application has been received.
 
 We wish you the best of luck! 💜`
-    );
-
+   successMessage.style.display = "block";
+    form.reset();
+  });
+});
     form.reset();
 
 });
