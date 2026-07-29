@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>KINDERY LABEL</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
@@ -12,53 +16,94 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial,sans-serif;
+font-family:'Poppins',sans-serif;
 }
 
 body{
 
-background:linear-gradient(135deg,#7ddcff,#b88cff,#ffd4ef);
-background-size:400% 400%;
-animation:bg 12s ease infinite;
+background:
+radial-gradient(circle at top left,#8fd8ff 0%,transparent 35%),
+radial-gradient(circle at bottom right,#ff8ee7 0%,transparent 40%),
+linear-gradient(135deg,#b7a8ff,#9cc8ff,#f7a5e6);
+
+background-size:cover;
+min-height:100vh;
 color:white;
+overflow-x:hidden;
 
 }
 
-@keyframes bg{
+body::before{
 
-0%{background-position:0% 50%;}
-50%{background-position:100% 50%;}
-100%{background-position:0% 50%;}
+content:"";
+position:fixed;
+width:600px;
+height:600px;
+background:rgba(255,255,255,.18);
+filter:blur(140px);
+top:-150px;
+left:-150px;
+border-radius:50%;
+z-index:-2;
+
+}
+
+body::after{
+
+content:"";
+position:fixed;
+width:500px;
+height:500px;
+background:rgba(255,255,255,.15);
+filter:blur(120px);
+right:-120px;
+bottom:-120px;
+border-radius:50%;
+z-index:-2;
+
+}
+
+header{
+
+position:fixed;
+top:20px;
+left:50%;
+transform:translateX(-50%);
+width:92%;
+max-width:1300px;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:18px 35px;
+
+background:rgba(255,255,255,.18);
+
+backdrop-filter:blur(25px);
+
+border:1px solid rgba(255,255,255,.3);
+
+border-radius:25px;
+
+box-shadow:0 8px 30px rgba(0,0,0,.15);
+
+z-index:999;
+
+}
+
+.logo{
+
+font-size:32px;
+font-weight:800;
+line-height:1;
+letter-spacing:2px;
 
 }
 
 nav{
 
 display:flex;
-justify-content:space-between;
-align-items:center;
-
-padding:20px 60px;
-
-backdrop-filter:blur(15px);
-
-background:rgba(255,255,255,.15);
-
-position:fixed;
-width:100%;
-
-}
-
-nav h2{
-
-letter-spacing:3px;
-
-}
-
-nav ul{
-
-display:flex;
-list-style:none;
 gap:35px;
 
 }
@@ -67,7 +112,15 @@ nav a{
 
 color:white;
 text-decoration:none;
-font-weight:bold;
+font-weight:600;
+transition:.3s;
+
+}
+
+nav a:hover{
+
+color:#ffe6ff;
+text-shadow:0 0 15px white;
 
 }
 
@@ -78,194 +131,222 @@ height:100vh;
 display:flex;
 
 justify-content:center;
+
 align-items:center;
 
-flex-direction:column;
 text-align:center;
 
-padding:30px;
+padding:20px;
+
+}
+
+.hero-box{
+
+background:rgba(255,255,255,.18);
+
+backdrop-filter:blur(35px);
+
+border:1px solid rgba(255,255,255,.3);
+
+padding:70px;
+
+border-radius:35px;
+
+max-width:950px;
+
+box-shadow:0 20px 50px rgba(0,0,0,.15);
+
+animation:float 5s ease-in-out infinite;
 
 }
 
 .hero h1{
 
-font-size:70px;
+font-size:90px;
 
-text-shadow:0 0 30px white;
+line-height:1;
+
+font-weight:800;
+
+text-shadow:0 0 25px rgba(255,255,255,.8);
+
+margin-bottom:30px;
 
 }
 
 .hero p{
 
-font-size:22px;
+font-size:24px;
 
-margin-top:20px;
+line-height:1.8;
 
-max-width:700px;
+opacity:.95;
 
+margin-bottom:45px;
+
+}.hero{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    min-height:100vh;
+    padding:40px;
 }
 
-button{
-
-margin-top:40px;
-
-padding:15px 40px;
-
-border:none;
-
-border-radius:50px;
-
-font-size:18px;
-
-background:white;
-
-color:#8b5cff;
-
-font-weight:bold;
-
-cursor:pointer;
-
-transition:.3s;
-
+.glass{
+    background:rgba(255,255,255,0.12);
+    backdrop-filter:blur(25px);
+    -webkit-backdrop-filter:blur(25px);
+    border:1px solid rgba(255,255,255,0.25);
+    border-radius:35px;
+    padding:60px;
+    max-width:850px;
+    box-shadow:0 8px 35px rgba(0,0,0,0.15);
 }
 
-button:hover{
-
-transform:scale(1.08);
-
+.logo{
+    font-size:72px;
+    font-weight:900;
+    letter-spacing:6px;
+    text-transform:uppercase;
+    line-height:0.95;
+    margin-bottom:30px;
+    text-shadow:0 0 25px rgba(255,255,255,.6);
 }
 
-section{
-
-padding:120px 40px;
-
+.subtitle{
+    font-size:28px;
+    opacity:.95;
+    line-height:1.6;
+    margin-bottom:45px;
 }
 
-.cards{
-
-display:flex;
-
-gap:30px;
-
-flex-wrap:wrap;
-
-justify-content:center;
-
+.button{
+    display:inline-block;
+    padding:18px 55px;
+    border-radius:50px;
+    background:rgba(255,255,255,.9);
+    color:#a44cff;
+    text-decoration:none;
+    font-size:24px;
+    font-weight:bold;
+    transition:.3s;
 }
 
-.card{
-
-width:260px;
-
-padding:25px;
-
-background:rgba(255,255,255,.18);
-
-backdrop-filter:blur(20px);
-
-border-radius:25px;
-
-text-align:center;
-
-transition:.3s;
-
-}
-
-.card:hover{
-
-transform:translateY(-8px);
-
-}
-
-footer{
-
-padding:40px;
-
-text-align:center;
-
-background:rgba(255,255,255,.15);
-
-}
-
-</style>
-
+.button:hover{
+    transform:translateY(-5px);
+    background:white;
+    box-shadow:0 0 30px rgba(255,255,255,.6);
+}</style>
 </head>
 
 <body>
 
+<header>
+<div class="logo">KINDERY LABEL</div>
+
 <nav>
-
-<h2>KINDERY LABEL</h2>
-
-<ul>
-
-<li><a href="#">HOME</a></li>
-
-<li><a href="#">ARTISTS</a></li>
-
-<li><a href="#">NEWS</a></li>
-
-<li><a href="#">AUDITION</a></li>
-
-</ul>
-
+<a href="#">HOME</a>
+<a href="#artists">ARTISTS</a>
+<a href="#news">NEWS</a>
+<a href="#audition">AUDITION</a>
 </nav>
 
-<div class="hero">
+</header>
 
-<h1>KINDERY LABEL</h1>
+<section class="hero">
 
-<p>
-Welcome to KINDERY LABEL —
-a new generation K-pop entertainment company.
-</p>
+<div class="glass">
 
-<button>Explore</button>
-
-</div>
-
-<section>
-
-<h1 style="text-align:center;margin-bottom:60px;">
-OUR ARTISTS
+<h1 class="logo">
+KINDERY<br>LABEL
 </h1>
 
-<div class="cards">
+<p class="subtitle">
+Where dreams become reality.<br>
+A new generation K-pop entertainment.
+</p>
 
-<div class="card">
-
-<h2>COMING SOON</h2>
-
-<p>New Artist</p>
-
-</div>
-
-<div class="card">
-
-<h2>COMING SOON</h2>
-
-<p>New Group</p>
+<a href="#artists" class="button">
+ENTER
+</a>
 
 </div>
 
-<div class="card">
+</section>
 
-<h2>COMING SOON</h2>
+<section id="artists" style="padding:120px 10%;">
 
+<h2 style="font-size:48px;text-align:center;margin-bottom:50px;">
+OUR ARTISTS
+</h2>
+
+<div style="display:flex;gap:30px;justify-content:center;flex-wrap:wrap;">
+
+<div class="glass" style="width:260px;text-align:center;">
+<h3>COMING SOON</h3>
 <p>Future Idol</p>
+</div>
 
+<div class="glass" style="width:260px;text-align:center;">
+<h3>COMING SOON</h3>
+<p>New Group</p>
+</div>
+
+<div class="glass" style="width:260px;text-align:center;">
+<h3>COMING SOON</h3>
+<p>Next Generation</p>
 </div>
 
 </div>
 
 </section>
 
-<footer>
+<section id="news" style="padding:120px 10%;">
 
+<h2 style="font-size:48px;text-align:center;margin-bottom:40px;">
+LATEST NEWS
+</h2>
+
+<div class="glass">
+
+<h3>Welcome to KINDERY LABEL!</h3>
+
+<p style="margin-top:15px;font-size:20px;line-height:1.8;">
+Our official website is now online.
+Stay tuned for artist announcements,
+auditions and upcoming projects.
+</p>
+
+</div>
+
+</section>
+
+<section id="audition" style="padding:120px 10%;">
+
+<div class="glass" style="text-align:center;">
+
+<h2 style="font-size:48px;">
+GLOBAL AUDITION
+</h2>
+
+<p style="margin:30px 0;font-size:22px;">
+Become part of KINDERY LABEL.
+Your dream starts here.
+</p>
+
+<a href="#" class="button">
+Apply Now
+</a>
+
+</div>
+
+</section>
+
+<footer style="padding:60px;text-align:center;opacity:.8;">
 © 2026 KINDERY LABEL
-
 </footer>
 
 </body>
-
 </html>
