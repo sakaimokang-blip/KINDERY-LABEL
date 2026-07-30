@@ -1,189 +1,260 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kindery Label</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="style.css">
+<title>KINDERY LABEL</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+
+background:linear-gradient(135deg,#7ddcff,#b88cff,#ffd4ef);
+background-size:400% 400%;
+animation:bg 12s ease infinite;
+color:white;
+
+}
+
+@keyframes bg{
+
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+
+}
+
+nav{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:20px 60px;
+
+backdrop-filter:blur(15px);
+
+background:rgba(255,255,255,.15);
+
+position:fixed;
+width:100%;
+
+}
+
+nav h2{
+
+letter-spacing:3px;
+
+}
+
+nav ul{
+
+display:flex;
+list-style:none;
+gap:35px;
+
+}
+
+nav a{
+
+color:white;
+text-decoration:none;
+font-weight:bold;
+
+}
+
+.hero{
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+align-items:center;
+
+flex-direction:column;
+text-align:center;
+
+padding:30px;
+
+}
+
+.hero h1{
+
+font-size:70px;
+
+text-shadow:0 0 30px white;
+
+}
+
+.hero p{
+
+font-size:22px;
+
+margin-top:20px;
+
+max-width:700px;
+
+}
+
+button{
+
+margin-top:40px;
+
+padding:15px 40px;
+
+border:none;
+
+border-radius:50px;
+
+font-size:18px;
+
+background:white;
+
+color:#8b5cff;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+button:hover{
+
+transform:scale(1.08);
+
+}
+
+section{
+
+padding:120px 40px;
+
+}
+
+.cards{
+
+display:flex;
+
+gap:30px;
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+}
+
+.card{
+
+width:260px;
+
+padding:25px;
+
+background:rgba(255,255,255,.18);
+
+backdrop-filter:blur(20px);
+
+border-radius:25px;
+
+text-align:center;
+
+transition:.3s;
+
+}
+
+.card:hover{
+
+transform:translateY(-8px);
+
+}
+
+footer{
+
+padding:40px;
+
+text-align:center;
+
+background:rgba(255,255,255,.15);
+
+}
+
+</style>
+
 </head>
+
 <body>
 
-<div class="background-blur"></div>
-<div class="bubble bubble1"></div>
-<div class="bubble bubble2"></div>
-<div class="bubble bubble3"></div>
+<nav>
 
-<header>
-
-    <div class="logo">
-
-        <img src="assets/logo.png" alt="Kindery Label">
-
-        <h2>Kindery Label</h2>
-
-    </div>
-
-    <nav>
-
-        <a href="#home">Home</a>
-        <a href="#lore">Lore</a>
-        <a href="#rules">Rules</a>
-        <a href="#join">Join</a>
-
-    </nav>
-
-</header>
-
-<section class="hero" id="home">
-
-    <div class="glass">
-
-        <h1>Kindery Label</h1>
-
-        <p>
-            Every comeback saves another color.
-        </p>
-
-        <div class="buttons">
-
-            <a href="#join" class="btn">Join Us</a>
-
-            <a href="#lore" class="btn2">Read Lore</a>
-
-        </div>
-
-    </div>
-
-</section>
-
-<section class="lore" id="lore">
-
-<div class="card">
-
-<h2>Kid Energy</h2>
-
-<p>
-
-Давным-давно существовал мир, в котором каждый ребёнок оставлял после себя частичку своей фантазии.
-
-Мысли, игрушки, рисунки и мечты не исчезали.
-
-Они попадали в удивительный мир под названием <b>Kid Energy</b>.
-
-</p>
-
-<p>
-
-Там зонтики растут вместо деревьев.
-
-Облака похожи на сахарную вату.
-
-Цвета никогда не заканчиваются.
-
-Но однажды люди начали забывать, как мечтать...
-
-</p>
-
-<p>
-
-Каждый раз, когда исчезает вера в чудеса,
-
-из Kid Energy пропадает один цвет.
-
-Поэтому каждый камбэк артистов Kindery Label
-
-возвращает миру ещё один потерянный цвет.
-
-</p>
-
-</div>
-
-</section>
-
-<section class="rules" id="rules">
-
-<div class="card">
-
-<h2>Rules</h2>
-
-<h3>Для участников</h3>
+<h2>KINDERY LABEL</h2>
 
 <ul>
 
-<li>Уважайте других участников.</li>
+<li><a href="#">HOME</a></li>
 
-<li>Не допускаются оскорбления и токсичность.</li>
+<li><a href="#">ARTISTS</a></li>
 
-<li>Соблюдайте правила компании.</li>
+<li><a href="#">NEWS</a></li>
 
-<li>Не создавайте конфликты.</li>
-
-<li>Не распространяйте личную информацию.</li>
+<li><a href="#">AUDITION</a></li>
 
 </ul>
 
-<h3>Для стаффа</h3>
+</nav>
 
-<ul>
+<div class="hero">
 
-<li>Не злоупотреблять полномочиями.</li>
+<h1>KINDERY LABEL</h1>
 
-<li>Быть объективным.</li>
+<p>
+Welcome to KINDERY LABEL —
+a new generation K-pop entertainment company.
+</p>
 
-<li>Поддерживать порядок.</li>
-
-<li>Объяснять причины наказаний.</li>
-
-<li>Показывать хороший пример.</li>
-
-</ul>
+<button>Explore</button>
 
 </div>
 
-</section>
+<section>
 
-<section class="join" id="join">
+<h1 style="text-align:center;margin-bottom:60px;">
+OUR ARTISTS
+</h1>
+
+<div class="cards">
 
 <div class="card">
 
-<h2>Application</h2>
+<h2>COMING SOON</h2>
 
-<form>
+<p>New Artist</p>
 
-<input type="text" placeholder="Должность">
+</div>
 
-<input type="text" placeholder="Имя">
+<div class="card">
 
-<input type="text" placeholder="Псевдоним">
+<h2>COMING SOON</h2>
 
-<input type="number" placeholder="Возраст">
+<p>New Group</p>
 
-<input type="text" placeholder="Страна">
+</div>
 
-<input type="text" placeholder="Часовой пояс">
+<div class="card">
 
-<input type="text" placeholder="Telegram">
+<h2>COMING SOON</h2>
 
-<input type="text" placeholder="Социальные сети">
+<p>Future Idol</p>
 
-<input type="text" placeholder="BandLab">
-
-<textarea placeholder="Опыт"></textarea>
-
-<textarea placeholder="Почему хотите присоединиться?"></textarea>
-
-<textarea placeholder="Свободное время (0/10)"></textarea>
-
-<textarea placeholder="Расскажите о себе"></textarea>
-
-<button type="submit">Отправить</button>
-
-</form>
+</div>
 
 </div>
 
@@ -191,13 +262,10 @@
 
 <footer>
 
-<p>© 2026 Kindery Label</p>
-
-<p>Keep dreaming. Save every color.</p>
+© 2026 KINDERY LABEL
 
 </footer>
 
-<script src="script.js"></script>
-
 </body>
+
 </html>
