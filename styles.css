@@ -1,7 +1,355 @@
-/* например, для анимаций глассморфизма, неоновых эффектов */
-.shadow-glass {
-  box-shadow: 0 0 20px rgba(255,255,255,0.2), inset 0 0 10px rgba(255,255,255,0.2);
+css/* ==========================================================================
+   1. СБРОС СТИЛЕЙ И БАЗОВЫЕ НАСТРОЙКИ
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
-.neon-glow {
-  text-shadow: 0 0 10px #fff, 0 0 20px #fff;
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Яркий Y2K градиент из логотипа: синий, сиреневый, розовый */
+    background: linear-gradient(135deg, #4facfe 0%, #c86dd7 40%, #fed6e3 100%);
+    background-attachment: fixed;
+    overflow-x: hidden;
+    color: #ffffff;
+    perspective: 1000px; /* Эффект глубины для 3D-парения */
+}
+
+/* ==========================================================================
+   2. ГЛАВНЫЙ КОНТЕЙНЕР ДЛЯ ЭФФЕКТА 3D-ПАРЕНИЯ
+   ========================================================================== */
+.scene-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    height: 900px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    padding: 20px;
+}
+
+/* Общий базовый стиль для всех стеклянных панелей (Glassmorphism) */
+.glass-panel {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2),
+                inset 0 0 15px rgba(255, 255, 255, 0.1);
+    /* Органические, "жидкие" закругления из примера */
+    border-radius: 40px 30px 50px 35px;
+    animation: float 6s ease-in-out infinite;
+    transition: all 0.3s ease;
+}
+
+.glass-panel:hover {
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 12px 40px 0 rgba(244, 63, 94, 0.4), /* Неоновый розовый блик */
+                inset 0 0 20px rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px) scale(1.01);
+}
+
+/* ==========================================================================
+   3. ГЛАВНАЯ ЦЕНТРАЛЬНАЯ ПАНЕЛЬ (HERO BANNER)
+   ========================================================================== */
+.main-card {
+    grid-column: 2 / 9;
+    grid-row: 2 / 7;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 10;
+    /* Неоновое свечение в стиле Cyber-kidcore */
+    border-bottom-left-radius: 80px; /* Эффект подтекшего края */
+}
+
+/* Шапка сайта */
+.header-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo {
+    font-weight: 800;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.nav-links a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+.nav-links a:hover {
+    color: #fff;
+    text-shadow: 0 0 8px #4facfe, 0 0 15px #4facfe;
+}
+
+/* Текстовый блок */
+.hero-content {
+    margin-top: 40px;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    letter-spacing: -1px;
+    line-height: 1.1;
+    text-transform: uppercase;
+    background: linear-gradient(to right, #ffffff, #fed6e3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 30px;
+}
+
+/* Стеклянная овальная кнопка с каплей */
+.btn-discover {
+    display: inline-block;
+    padding: 12px 35px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 50px;
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.btn-discover:hover {
+    background: #ffffff;
+    color: #c86dd7;box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+}
+
+/* Эффект капли под кнопкой */
+.btn-discover::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 30px;
+    width: 12px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 0 50px 50px 50px;
+    transform: rotate(45deg);
+}
+
+/* ==========================================================================
+   4. БОКОВОЕ МЕНЮ СПРАВА (КАПЛИ)
+   ========================================================================== */
+.side-menu {
+    grid-column: 10 / 12;
+    grid-row: 2 / 6;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    z-index: 5;
+}
+
+.menu-drop {
+    padding: 15px 25px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    /* Форма вытянутой капли */
+    border-radius: 20px 40px 10px 40px;
+    animation-delay: -1.5s;
+    cursor: pointer;
+}
+
+.menu-drop:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: #4facfe;
+}
+
+/* ==========================================================================
+   5. КАРТОЧКИ ТОВАРОВ (PRODUCT CARDS)
+   ========================================================================== */
+.products-container {
+    grid-column: 2 / 8;
+    grid-row: 7 / 12;
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+    margin-top: -20px;
+    z-index: 12;
+}
+
+.product-card {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+    border-radius: 30px 30px 50px 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Разная задержка анимации для эффекта хаотичного парения */
+.product-card:nth-child(1) { animation-delay: 0s; }
+.product-card:nth-child(2) { animation-delay: -2s; margin-top: -15px; }
+.product-card:nth-child(3) { animation-delay: -4s; margin-top: 15px; }
+
+.product-img-box {
+    width: 100%;
+    height: 140px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Внутренний неоновый блик в карточке товара */
+.product-img-box::before {
+    content: '';
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(circle, rgba(200,109,215,0.4) 0%, transparent 70%);
+    top: -20%;
+}
+
+.product-card h3 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.product-price {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #fed6e3;
+    text-shadow: 0 0 5px rgba(254, 214, 227, 0.5);
+}
+
+.product-arrow {
+    margin-top: 15px;
+    font-size: 1.2rem;
+    color: rgba(255,255,255,0.5);
+    transition: 0.2s;
+}
+
+.product-card:hover .product-arrow {
+    transform: translateX(5px);
+    color: #4facfe;
+}
+
+/* ==========================================================================
+   6. ИЗОГНУТЫЙ ВИДЖЕТ И ПОЛЗУНКИ (MY ROUTINE)
+   ========================================================================== */
+.routine-widget {
+    grid-column: 8 / 12;
+    grid-row: 6 / 11;
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    z-index: 8;
+    background: rgba(40, 30, 60, 0.25); /* Более темное стекло для контраста */
+    border-radius: 50px 30px 35px 60px;
+    animation-delay: -3s;
+}
+
+.routine-widget h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.slider-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.slider-group label {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Кастомный футуристический ползунок */
+.slider-bar {
+    width: 100%;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.15);
+}
+
+/* Наполненность слайдера (Яркие градиенты из логотипа) */.slider-fill {
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+.fill-hydration { 
+    width: 85%; 
+    background: linear-gradient(to right, #4facfe, #00f2fe); 
+}
+.fill-progress { 
+    width: 60%; 
+    background: linear-gradient(to right, #f43f5e, #c86dd7); 
+}
+.fill-radiance { 
+    width: 92%; 
+    background: linear-gradient(to right, #ffafbd, #ffc3a0); 
+}
+
+/* ==========================================================================
+   7. АНИМАЦИЯ ПАРЕНИЯ (FLOAT)
+   ========================================================================== */
+@keyframes float {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-15px) rotate(0.5deg);
+    }
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+}
+
+/* Адаптивность для небольших экранов */
+@media (max-width: 1024px) {
+    body { overflow-y: auto; padding: 40px 10px; }
+    .scene-container { display: flex; flex-direction: column; height: auto; gap: 30px; }
+    .main-card, .side-menu, .products-container, .routine-widget { width: 100%; margin: 0; }
+    .products-container { flex-direction: column; }
 }
